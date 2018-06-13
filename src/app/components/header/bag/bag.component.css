@@ -1,0 +1,53 @@
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: calc(100vh -100px);
+  display: flex;
+}
+.container .close {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  width: calc(100vw - 450px);
+}
+.container .bag {
+  width: 450px;
+  height: 100vh;
+  background-color: white;
+  overflow: scroll;
+}
+.container .bag .items-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .bag .items-wrap .items {
+  margin: 10px;
+}
+.container .bag img {
+  width: 220px;
+}
+.container .bag .header {
+  height: 100px;
+  display: flex;
+  background: #294057;
+  align-items: center;
+}
+.container .bag .header .arrow {
+  background-image: url(../../../../assets/image/main-page/closeBag-arrow.png);
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+}
+.container .bag .header h2 {
+  width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30xp;
+  font-family: sans-serif;
+  color: white;
+}
+.example-card {
+  max-width: 400px;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="filter">
+    <h3>Велосипеди</h3>
+    <p>Ціна</p>
+    <span>від</span> <input type="number">
+    <span>до</span> <input type="number">
+  
+    <p>Клас</p>
+    <mat-checkbox class="example-margin" >гібрид</mat-checkbox>
+    <label> <input type="checkbox"> <span>гірський</span> </label>
+    <label> <input type="checkbox"> <span>Екстримальний</span> </label>
+    <label> <input type="checkbox"> <span>Шосейний</span> </label>
+    <label> <input type="checkbox"> <span>фатбайк</span> </label>
+    <label> <input type="checkbox"> <span>ригід</span> </label>
+    <label> <input type="checkbox"> <span>BMX</span> </label>
+
+    <p>матеріал</p>
+    <label> <input type="checkbox"> <span>Алюміній</span> </label>
+    <label> <input type="checkbox"> <span>Карбон</span> </label>
+    <label> <input type="checkbox"> <span>Сталь</span> </label>
+ 
+    
+    <p>Тип гальм</p>
+    <label> <input type="checkbox"> <span>Дискові гідравлічні</span> </label>
+    <label> <input type="checkbox"> <span>Дискові механічні</span> </label>
+    <label> <input type="checkbox"> <span>Ножний</span> </label>
+    <label> <input type="checkbox"> <span>Обідні</span> </label>
+    <label> <input type="checkbox"> <span>Ролерні</span> </label>
+
+    <button>Пошук</button>
+  </div>
+    <div class="items-wrap">
+    <div class="items" *ngFor = 'let item of items'>
+        <mat-card style="z-index: 0!important;" class="example-card">
+            <img mat-card-image [src]="item.image[0]" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+               {{item.price}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)='addToBag(item)'>В кошик</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>
+
+</div>

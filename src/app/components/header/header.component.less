@@ -1,0 +1,40 @@
+@nav-text-color:#294057;
+@nav-text-color-hover:#C3A67C;
+.header{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    line-height: 100px;
+    // position: sticky;
+    background:#fff;
+    &-logo{
+        width: 30%;
+        display: flex;
+
+    }
+    &-nav{
+
+        ul{
+            display: flex;
+            
+            li{
+                margin-left: 100px;
+                list-style-type: none;
+                text-transform: uppercase;
+                a{
+                    text-decoration: none;
+                    color: @nav-text-color;
+                    &:hover{
+                        color: @nav-text-color-hover;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    &-bag{
+        width: 140px;
+        background: #0f0;
+    }
+}

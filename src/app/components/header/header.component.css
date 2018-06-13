@@ -1,0 +1,32 @@
+.header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  line-height: 100px;
+  background: #fff;
+}
+.header-logo {
+  width: 30%;
+  display: flex;
+}
+.header-nav ul {
+  display: flex;
+}
+.header-nav ul li {
+  margin-left: 100px;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+.header-nav ul li a {
+  text-decoration: none;
+  color: #294057;
+}
+.header-nav ul li a:hover {
+  color: #C3A67C;
+  cursor: pointer;
+}
+.header-bag {
+  width: 140px;
+  background: #0f0;
+}

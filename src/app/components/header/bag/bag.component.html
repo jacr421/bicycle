@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="close" (click)="closeBag()"></div>
+
+  <div class="bag">
+    <div class="header">
+      <div class="arrow" (click)="closeBag()" ></div>
+      <h2>cart</h2>
+    </div>
+    <div class="items-wrap">
+      <div class="items" *ngFor = 'let item of items, let i=index'>
+        <mat-card class="example-card">
+          <img mat-card-image [src]="item.image[0]" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                {{item.price}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)='remove(i)'>Видалити</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+  </div>
+ </div>

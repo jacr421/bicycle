@@ -1,0 +1,15 @@
+<app-bag style="z-index: 100!important;" *ngIf='isOpen.bag'></app-bag>
+<div class="container">
+  <div class="header">
+    <div class="header-logo"><p>urban bikes</p> </div>
+    <div class="header-nav">
+      <ul>
+        <li ><a [routerLink]="['/']">на головну</a></li>
+        <li ><a [routerLink]="['/shop']">магазин</a></li>
+        <li ><a [routerLink]="['/blog']">блог</a></li>
+        <li ><a [routerLink]="['/contact']">контакти</a></li>
+      </ul>
+    </div>
+    <div class="header-bag" (click)="openBag()"></div>
+  </div>
+</div>
