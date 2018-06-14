@@ -36,3 +36,6 @@
 .container .items-wrap .items {
   margin: 20px;
 }
+.container .items-wrap .items .card img {
+  width: 300px;
+}

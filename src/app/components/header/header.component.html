@@ -1,4 +1,6 @@
 <app-bag style="z-index: 100!important;" *ngIf='isOpen.bag'></app-bag>
+<app-login *ngIf='isOpen.login'></app-login>
+<app-registration *ngIf='isOpen.registration'></app-registration>
 <div class="container">
   <div class="header">
     <div class="header-logo"><p>urban bikes</p> </div>
@@ -10,6 +12,11 @@
         <li ><a [routerLink]="['/contact']">контакти</a></li>
       </ul>
     </div>
-    <div class="header-bag" (click)="openBag()"></div>
+    <div class="login">
+      <span>Login</span> / <p>Registration </p>
+    </div>
+    <div class="header-bag" (click)="openBag()">
+      {{isOpen.counterPurchases}}
+    </div>
   </div>
 </div>

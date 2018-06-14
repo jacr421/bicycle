@@ -7,7 +7,6 @@
     <span>до</span> <input type="number">
   
     <p>Клас</p>
-    <mat-checkbox class="example-margin" >гібрид</mat-checkbox>
     <label> <input type="checkbox"> <span>гірський</span> </label>
     <label> <input type="checkbox"> <span>Екстримальний</span> </label>
     <label> <input type="checkbox"> <span>Шосейний</span> </label>
@@ -32,17 +31,12 @@
   </div>
     <div class="items-wrap">
     <div class="items" *ngFor = 'let item of items'>
-        <mat-card style="z-index: 0!important;" class="example-card">
-            <img mat-card-image [src]="item.image[0]" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-               {{item.price}}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button (click)='addToBag(item)'>В кошик</button>
-            </mat-card-actions>
-          </mat-card>
+      <div class="card">
+        <img [src]="item.image[0]" alt="">
+        <p>{{item.shortDescription}}</p>
+        <p>Ціна: {{item.price}}грн.</p>
+        <button (click)='addToBag(item)'>В кошик</button>
+      </div>
     </div>
   </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { ItemsService } from '../../service/items.service';
 import { Item } from '../../model/item.model';
 import { BagService } from '../../service/bag.service';
+import { IsOpenService } from '../../service/isOpen.service';
 
 @Component({
   selector: 'app-shop',
@@ -11,15 +12,14 @@ import { BagService } from '../../service/bag.service';
 @Injectable()
 export class ShopComponent implements OnInit {
 
-  constructor(private itemService:ItemsService, private bagService:BagService ) { }
+  constructor(private itemService:ItemsService, private bagService:BagService,private isOpenServese:IsOpenService) { }
   items:Item[]=[]
   ngOnInit() {
     this.items=this.itemService.items;
   }
   addToBag(item){
-    console.log(item)
     this.bagService.push(item);
-
+    this.isOpenServese.bag=true;
   }
 
 }

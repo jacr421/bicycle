@@ -10,7 +10,7 @@
 .container .aboutUs-description {
   width: 50%;
   height: 100%;
-  background: #f00;
+  background: #ffffff;
 }
 .container .aboutUs-description h3 {
   margin: 60px;
@@ -40,4 +40,16 @@
 .container .footer {
   height: 100px;
   background-color: #C3A67C;
+  display: flex;
+  justify-content: center;
+}
+.container .footer .icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+}
+.container .footer .icon img {
+  height: 50px;
+  width: 50px;
 }

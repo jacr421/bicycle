@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="close" (click)='closeLogin()'></div>
+    <mat-form-field class="example-full-width">
+        <input matInput type='email' placeholder="Email"  [(ngModel)]='user.email'>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput type='password' placeholder="Password"  [(ngModel)]='user.password'>
+    </mat-form-field>
+    <button mat-raised-button (click)='login()'>Login</button>
+    <span>or</span>
+    <button mat-raised-button (click)='openRegistration()'>Registration</button>
+  
+  
+  </div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="close" (click)='closeRegistration()'></div>
+      
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input  matInput placeholder="First name" [(ngModel)]="user.name" >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name" [(ngModel)]='user.sName'>
+          </mat-form-field></td>
+        </tr></table>
+        <p>
+          <mat-form-field class="example-full-width">
+            <input matInput type='email' placeholder="Email" [(ngModel)]='user.email'>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width">
+            <input matInput type='email' placeholder="Password"  [(ngModel)]='user.password'>
+          </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field class="example-full-width">
+              <input matInput type='email' placeholder="Repeat password">
+            </mat-form-field>
+          </p>
+
+
+      <p>
+        <mat-form-field class="example-full-width">
+            <input matInput type='number' placeholder="Age"  [(ngModel)]='user.age'>
+          </mat-form-field>
+        </p>
+  
+        <mat-form-field class="example-full-width">
+          <span matPrefix>+380 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone"  [(ngModel)]='user.telephone'>
+        </mat-form-field>
+      
+  <button mat-raised-button (click)="addUser()" >ok</button>
+</div>
