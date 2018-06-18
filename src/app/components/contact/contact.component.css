@@ -1,0 +1,25 @@
+.container {
+  margin-bottom: 100px;
+}
+.container h1 {
+  text-align: center;
+  color: #C3A67C;
+}
+.container .info {
+  display: flex;
+}
+.container .info .ourStore,
+.container .info .opening {
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.container .map {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

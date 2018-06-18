@@ -14,7 +14,6 @@
   margin: 0 10px;
 }
 .container {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -23,9 +22,10 @@
   display: flex;
   flex-direction: column;
   width: 20%;
+  padding: 20px;
 }
 .container .filter p {
-  color: red;
+  color: #e5a630;
 }
 .container .items-wrap {
   width: 80%;
@@ -34,8 +34,64 @@
   justify-content: space-around;
 }
 .container .items-wrap .items {
+  width: 350px;
+  height: 280px;
   margin: 20px;
+}
+.container .items-wrap .items .card p {
+  text-align: center;
 }
 .container .items-wrap .items .card img {
   width: 300px;
+}
+.checkbox {
+  display: none;
+}
+.checkbox-custom {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+}
+/* Кастомный чекбокс и лейбл центрируем по вертикали. Если вам это не требуется, то вы можете убрать свойство vertical-align: middle из данного правила, но свойство display: inline-block обязательно должно быть */
+.checkbox-custom,
+.label {
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.checkbox:checked + .checkbox-custom::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background: #C3A67C;
+  border-radius: 2px;
+}
+.search {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.search:hover {
+  background-color: #e7e7e7;
+}
+.price input {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
 }

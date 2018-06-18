@@ -1,3 +1,15 @@
-<p>
-  item works!
-</p>
+<div class="container">
+  <div class="characteristic">
+    <span>  <p> {{item.shortDescription}}</p> </span>
+    <span> Тип:<p> {{item.type}}</p> </span>
+    <span> Матеріал : <p> {{item.material}}</p> </span>
+    <span> Тип гальм : <p> {{item.typeBrakes}}</p> </span>
+    <span>  Ціна : <p> {{item.price}}</p> </span>
+    <span>  Країна виробника : <p> {{item.country}}</p> </span>
+    
+  </div>
+  <div class="image">
+    <img [src]="item.image" alt="">
+  </div>
+</div>
+<button class="btn">Додати в корзину</button>

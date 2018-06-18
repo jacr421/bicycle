@@ -17,4 +17,10 @@ export class HeaderComponent implements OnInit {
   openBag(){
     this.isOpen.bag=true;
   }
+  openLogin(){
+    this.isOpen.login=true;
+  }
+  openRegistration(){
+    this.isOpen.registration=true;
+  }
 }

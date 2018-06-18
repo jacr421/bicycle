@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="login">
-      <span>Login</span> / <p>Registration </p>
+      <span (click)='openLogin()'>Login</span> / <p (click)='openRegistration()'>Registration </p>
     </div>
     <div class="header-bag" (click)="openBag()">
       {{isOpen.counterPurchases}}

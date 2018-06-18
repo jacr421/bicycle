@@ -3,40 +3,102 @@
   <div class="filter">
     <h3>Велосипеди</h3>
     <p>Ціна</p>
-    <span>від</span> <input type="number">
-    <span>до</span> <input type="number">
-  
+    <div class="price">
+
+      <span>від</span> <input type="number">
+      <span>до</span> <input type="number">
+    </div>
     <p>Клас</p>
-    <label> <input type="checkbox"> <span>гірський</span> </label>
-    <label> <input type="checkbox"> <span>Екстримальний</span> </label>
-    <label> <input type="checkbox"> <span>Шосейний</span> </label>
-    <label> <input type="checkbox"> <span>фатбайк</span> </label>
-    <label> <input type="checkbox"> <span>ригід</span> </label>
-    <label> <input type="checkbox"> <span>BMX</span> </label>
+    <label>
+      <input class="checkbox" type="checkbox" name="checkbox-test">
+      <span class="checkbox-custom"></span>
+      <span class="label">Гірський</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Екстримальний</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Шосейний</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Фатбайк</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Ригід</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">BMX</span>
+  </label>
+  <p>матеріал</p>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Алюміній</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Карбон</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Сталь</span>
+  </label>
+  <p>Тип гальм</p>
 
-    <p>матеріал</p>
-    <label> <input type="checkbox"> <span>Алюміній</span> </label>
-    <label> <input type="checkbox"> <span>Карбон</span> </label>
-    <label> <input type="checkbox"> <span>Сталь</span> </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Дискові гідравлічні</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Дискові механічні</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Ножний</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Обідні</span>
+  </label>
+  <label>
+    <input class="checkbox" type="checkbox" name="checkbox-test">
+    <span class="checkbox-custom"></span>
+    <span class="label">Ролерні</span>
+  </label>
+     
  
-    
-    <p>Тип гальм</p>
-    <label> <input type="checkbox"> <span>Дискові гідравлічні</span> </label>
-    <label> <input type="checkbox"> <span>Дискові механічні</span> </label>
-    <label> <input type="checkbox"> <span>Ножний</span> </label>
-    <label> <input type="checkbox"> <span>Обідні</span> </label>
-    <label> <input type="checkbox"> <span>Ролерні</span> </label>
-
-    <button>Пошук</button>
+    <button class="search" (click)='search()'>Пошук</button>
   </div>
-    <div class="items-wrap">
-    <div class="items" *ngFor = 'let item of items'>
+
+  <div class="items-wrap">
+    <div class="items" *ngFor = 'let item of items;let i = index'>
+      <mat-card>
       <div class="card">
-        <img [src]="item.image[0]" alt="">
-        <p>{{item.shortDescription}}</p>
+        <!-- <img [routerLink]='/shop/i' [src]="item.image[0]" alt=""> -->
+        {{i}}
+        <img routerLink = '/item/{{i}}'   [src]="item.image[0]" alt="">
+        <p class="description">{{item.shortDescription}}</p>
         <p>Ціна: {{item.price}}грн.</p>
         <button (click)='addToBag(item)'>В кошик</button>
       </div>
+    </mat-card>
     </div>
   </div>
 

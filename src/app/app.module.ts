@@ -24,6 +24,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { UserService } from './service/user.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from "@angular/common/http";
+import { AdminComponent } from './components/admin/admin.component'
+import { Pipe, PipeTransform } from '@angular/core'; 
+import { FilterPipe } from './pipe/filter.pipe';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -36,8 +42,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ItemComponent,
     BagComponent,
     LoginComponent,
-    RegistrationComponent
-  ],
+    RegistrationComponent,
+    AdminComponent,
+    FilterPipe,
+    ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTER),
@@ -45,7 +53,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     FormsModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    NgbModule
+    
   ],
   providers: [ItemsService,BagService,IsOpenService,UserService],
   bootstrap: [AppComponent]

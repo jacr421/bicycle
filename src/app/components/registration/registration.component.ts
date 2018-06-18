@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { User } from '../../model/user.model';
 import { UserService } from '../../service/user.service';
 import { IsOpenService } from '../../service/isOpen.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 
@@ -16,14 +18,18 @@ import { IsOpenService } from '../../service/isOpen.service';
 export class RegistrationComponent implements OnInit {
 
   user:User=new User('','','','',0,'')
-  constructor( private userService:UserService,private router:Router, private isOpen:IsOpenService) { }
+  constructor( private userService:UserService,private router:Router, private isOpen:IsOpenService,
+    private http:HttpClient) { }
   ngOnInit() {
     
   }
-  addUser(){
+  addUser():Observable<User> {
 
-    this.userService.addNewUser(this.user)
-    this.router.navigate(['main'])
+    this.isOpen.registration=false;
+    this.isOpen.login=true;
+
+    console.log(this.user);
+    return this.http.post<User>('localhost:3000/user/singup',this.user);
   }
   closeRegistration(){
     this.isOpen.registration=false;

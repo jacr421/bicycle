@@ -1,0 +1,7 @@
+.container {
+  margin: 10px;
+}
+.container mat-card {
+  display: flex;
+  flex-direction: column;
+}

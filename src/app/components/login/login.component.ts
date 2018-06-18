@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../../model/user.model';
 import { UserService } from '../../service/user.service';
 import { IsOpenService } from '../../service/isOpen.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -15,17 +16,25 @@ export class LoginComponent implements OnInit {
     password:""
   }
   users:User[]=[]
-  constructor(private userService:UserService,private router:Router,private isOpen:IsOpenService) { }
+  constructor(
+    private userService:UserService,
+    private router:Router,
+    private isOpen:IsOpenService,
+   private http:HttpClient   
+  ) { }
+
   login(){
-    let i;
-    for(i=0;i<this.users.length;i++){
-      if(this.user.email==this.users[i].email)
-        if(this.user.password==this.users[i].password)
-        this.userService.userLogin(this.users[i]);
-     }
-     if(i==this.users.length)
-      console.log('error login')
-      this.isOpen.login=false;
+    // let i;
+    // for(i=0;i<this.users.length;i++){
+    //   if(this.user.email==this.users[i].email)
+    //     if(this.user.password==this.users[i].password)
+    //     this.userService.userLogin(this.users[i]);
+    //  }
+    //  if(i==this.users.length)
+    //   console.log('error login')
+    //   this.isOpen.login=false;
+    this.http.post('localhost:3000/user/login',this.user)
+    
   }
   ngOnInit() {
     this.users=JSON.parse(localStorage.getItem('users'))

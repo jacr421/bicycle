@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemsService } from '../../../service/items.service';
+import { RouterPreloader, ActivatedRoute } from '@angular/router';
+import { Item } from '../../../model/item.model';
 
 @Component({
   selector: 'app-item',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private itemService:ItemsService,private router:ActivatedRoute) { }
+  item:Item
   ngOnInit() {
+    let index=this.router.snapshot.params['id']
+    this.item=this.itemService.items[index]
   }
 
 }
